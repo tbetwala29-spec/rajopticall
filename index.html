@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Optical - Eyewear Price List</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-blue: #0d47a1;
+            --light-blue: #2196f3;
+            --dark-blue: #0a2a5a;
+            --accent-gold: #ffb300;
+            --bg-light: #f5f7fa;
+            --text-dark: #2c3e50;
+            --text-light: #546e7a;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 30px rgba(13, 71, 161, 0.2);
+            margin-bottom: 40px;
+        }
+        
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            font-weight: 500;
+            margin: 15px 0;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .description {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            border-left: 5px solid var(--accent-gold);
+        }
+        
+        .section-title {
+            background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+            color: white;
+            padding: 18px 25px;
+            border-radius: 12px;
+            margin: 40px 0 20px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.2);
+        }
+        
+        .section-title i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .price-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--light-blue);
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .price-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin: 0 0 15px;
+            font-weight: 600;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-name {
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+        
+        .item-price {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            background: var(--bg-light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            min-width: 100px;
+            text-align: center;
+        }
+        
+        .contact-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid var(--light-blue);
+        }
+        
+        .contact-title {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+        
+        .call-btn {
+            background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+            color: white;
+        }
+        
+        .map-btn {
+            background: linear-gradient(135deg, #FFB300, #FF8F00);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+        
+        .disclaimer {
+            margin-top: 40px;
+            padding: 25px;
+            background: #FFF8E1;
+            border-radius: 15px;
+            text-align: center;
+            color: #E65100;
+            font-weight: 500;
+            border-left: 5px solid #FFB300;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .logo {
+                font-size: 2.8rem;
+            }
+            
+            .price-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                min-width: 150px;
+                padding: 14px 25px;
+                font-size: 1rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">👓 RAJ OPTICAL</div>
+                <div class="subtitle">Premium Eyewear & Vision Care</div>
+                <div class="tagline">See the World Clearly with Style</div>
+            </div>
+            <h1>Eyewear Price List</h1>
+        </header>
+        
+        <div class="description">
+            <p>Discover our premium collection of eyewear at unbeatable prices. From designer frames to prescription lenses, we offer the perfect blend of style, comfort, and clarity. Visit us for a personalized eye examination and find your perfect pair!</p>
+        </div>
+        
+        <div class="section-title">
+            <i class="fas fa-glasses"></i> Spectacles & Frames
+        </div>
+        
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Basic Frames</h3>
+                <div class="price-item">
+                    <span class="item-name">Plastic Full Frame</span>
+                    <span class="item-price">₹499</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Metal Full Frame</span>
+                    <span class="item-price">₹699</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Rimless Frame</span>
+                    <span class="item-price">₹899</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Half Frame</span>
+                    <span class="item-price">₹749</span>
+                </div>
+            </div>
+            
+            <div class="price-card">
+                <h3>Premium Frames</h3>
+                <div class="price-item">
+                    <span class="item-name">Designer Brand</span>
+                    <span class="item-price">₹1,299</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Memory Titanium</span>
+                    <span class="item-price">₹1,499</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Flexible TR90</span>
+                    <span class="item-price">₹1,199</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Acetate Premium</span>
+                    <span class="item-price">₹1,599</span>
+                </div>
+            </div>
+            
+            <div class="price-card">
+                <h3>Kids Frames</h3>
+                <div class="price-item">
+                    <span class="item-name">Kids Plastic Frame</span>
+                    <span class="item-price">₹399</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Kids Flexible Frame</span>
+                    <span class="item-price">₹599</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Kids Character Design</span>
+                    <span class="item-price">₹799</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Kids Sports Frame</span>
+                    <span class="item-price">₹899</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title">
+            <i class="fas fa-eye"></i> Lenses & Coatings
+        </div>
+        
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Basic Lenses</h3>
+                <div class="price-item">
+                    <span class="item-name">CR-39 Standard</span>
+                    <span class="item-price">₹299</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Polycarbonate</span>
+                    <span class="item-price">₹499</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">High Index 1.56</span>
+                    <span class="item-price">₹699</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">High Index 1.61</span>
+                    <span class="item-price">₹999</span>
+                </div>
+            </div>
+            
+            <div class="price-card">
+                <h3>Coatings</h3>
+                <div class="price-item">
+                    <span class="item-name">Anti-Reflective</span>
+                    <span class="item-price">₹399</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Blue Cut</span>
+                    <span class="item-price">₹499</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Scratch Resistant</span>
+                    <span class="item-price">₹299</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">UV Protection</span>
+                    <span class="item-price">₹199</span>
+                </div>
+            </div>
+            
+            <div class="price-card">
+                <h3>Bifocal/Progressive</h3>
+                <div class="price-item">
+                    <span class="item-name">Bifocal Basic</span>
+                    <span class="item-price">₹1,299</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Bifocal Premium</span>
+                    <span class="item-price">₹1,799</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Progressive Basic</span>
+                    <span class="item-price">₹2,499</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Progressive Premium</span>
+                    <span class="item-price">₹3,999</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title">
+            <i class="fas fa-sunglasses"></i> Sunglasses
+        </div>
+        
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Polarized Sunglasses</h3>
+                <div class="price-item">
+                    <span class="item-name">Polarized Basic</span>
+                    <span class="item-price">₹799</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Polarized Fashion</span>
+                    <span class="item-price">₹1,199</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Polarized Sports</span>
+                    <span class="item-price">₹1,499</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Polarized Premium</span>
+                    <span class="item-price">₹1,999</span>
+                </div>
+            </div>
+            
+            <div class="price-card">
+                <h3>Prescription Sunglasses</h3>
+                <div class="price-item">
+                    <span class="item-name">Single Vision</span>
+                    <span class="item-price">₹1,499</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Bifocal</span>
+                    <span class="item-price">₹2,199</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Progressive</span>
+                    <span class="item-price">₹3,299</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Photochromic</span>
+                    <span class="item-price">₹2,499</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title">
+            <i class="fas fa-stethoscope"></i> Eye Care Services
+        </div>
+        
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Eye Tests</h3>
+                <div class="price-item">
+                    <span class="item-name">Basic Eye Test</span>
+                    <span class="item-price">₹99</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Complete Eye Exam</span>
+                    <span class="item-price">₹199</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Digital Retina Scan</span>
+                    <span class="item-price">₹299</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Children Eye Test</span>
+                    <span class="item-price">₹149</span>
+                </div>
+            </div>
+            
+            <div class="price-card">
+                <h3>Contact Lenses</h3>
+                <div class="price-item">
+                    <span class="item-name">Daily Disposable</span>
+                    <span class="item-price">₹699/box</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Monthly Disposable</span>
+                    <span class="item-price">₹899/box</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Toric (Astigmatism)</span>
+                    <span class="item-price">₹1,299/box</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Multifocal</span>
+                    <span class="item-price">₹1,599/box</span>
+                </div>
+            </div>
+            
+            <div class="price-card">
+                <h3>Repairs & Services</h3>
+                <div class="price-item">
+                    <span class="item-name">Frame Adjustment</span>
+                    <span class="item-price">₹49</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Nose Pad Replacement</span>
+                    <span class="item-price">₹99</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Temple Repair</span>
+                    <span class="item-price">₹149</span>
+                </div>
+                <div class="price-item">
+                    <span class="item-name">Lens Replacement</span>
+                    <span class="item-price">Price as per lens</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <div class="contact-title">Contact Raj Optical</div>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Visit our store for personalized service</p>
+                <p><i class="fas fa-phone"></i> Call for appointments and inquiries</p>
+                <p><i class="fas fa-clock"></i> Open: 10:00 AM - 8:00 PM (Mon-Sun)</p>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="tel:+919753501786" class="btn call-btn">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <a href="https://wa.me/+919753501786" class="btn whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="#" class="btn map-btn">
+                    <i class="https://share.google/yuFP1CJxlwHiyMcX5"></i> class="review-btn" target="_blank">
+            <span class="btn-icon">⭐</span> Rate Us
+                </a>
+            </div>
+        </div>
+        
+        <div class="disclaimer">
+            <strong>Note:</strong> Prices are indicative and may vary based on specific requirements, brand selection, and promotions. 
+            Free eye test with every pair of spectacles purchased. Package deals available. All prices in Indian Rupees (₹).
+        </div>
+        
+        <footer>
+            <p>© 2024 Raj Optical. All Rights Reserved.</p>
+            <p>Professional Eyewear Solutions | Quality Vision Care</p>
+        </footer>
+    </div>
+</body>
+</html>
